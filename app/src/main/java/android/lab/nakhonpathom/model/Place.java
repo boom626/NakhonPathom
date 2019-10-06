@@ -1,10 +1,22 @@
 package android.lab.nakhonpathom.model;
 
-public class Place {  //เกบพิกัด เกบรูปได้ด้วย
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
+@Entity(tableName = "place")
+public class Place {  //เกบพิกัด เกบรูปได้ด้วย   =model
+
+    @PrimaryKey(autoGenerate = true) //จะอยู่บนประกาศตัวแปล   ,autoGenerate เพื่อเวลาเพิ่มข้อมูลไม่ต้องทำอะไรกับฟิลนี้ มันจะทำให้เอง
     public int id;
+
+    @ColumnInfo(name = "name")  //ตัวแปร name เวลาเกบในDB จะใช้ชื่ออะไร
     public String name;
+
+    @ColumnInfo(name = "district")
     public String district;
+
+    @ColumnInfo(name = "image")
     public int imageRes;
 
     //code - gene....
